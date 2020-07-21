@@ -1,0 +1,25 @@
+.navbar
+{
+  justify-content: space-between;
+
+}
+
+button
+{
+  padding-right: 1rem;;
+  margin-right: 2rem;
+}
+
+
+
+mat-sidenav-container{
+  height: 100%;
+}
+
+mat-sidenav , mat-sidenav-container{
+  padding: 10%;
+}
+
+mat-sidenav{
+  background-color: red;
+}

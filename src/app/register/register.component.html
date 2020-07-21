@@ -1,0 +1,73 @@
+<div class="medium-list">
+
+    <div class="display" class="mat-display-3">Create a new account
+
+    <p id="quick"  class="mat-display-1" >It's quick and easy<p>
+    </div>
+
+
+<div class="fullForm">
+    <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" novalidate class="form-container">
+        <mat-form-field>
+          <input id="name"
+                 matInput
+                 formControlName="name"
+                 [(ngModel)]="user.name"
+                 placeholder="Enter your name" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input id="email"
+                   matInput
+                   formControlName="email"
+                   [(ngModel)]="user.email"
+                   placeholder="Enter your email" />
+          </mat-form-field>
+
+        <mat-form-field>
+            <input id="password"
+                   matInput
+                   formControlName="password"
+                   [(ngModel)]="user.password"
+                   placeholder="Enter your password"
+                   [type]="hide ? 'password':'text'" />
+              <mat-icon matSuffix (click)="hide = !hide">
+                {{hide ? 'visibility' : 'visibility_off'}}
+              </mat-icon>
+          </mat-form-field>
+
+<div class="radio">
+          <mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1" class="radio1">Male</mat-radio-button>
+      <mat-radio-button value="2" class="radio2" >Female</mat-radio-button>
+</mat-radio-group>
+
+</div>
+
+
+
+
+
+
+
+          <button mat-button type="submit"
+                  class="mat-raised-button mat-primary"
+                  [disabled]="!registerForm.valid"
+                  (click)="onRegisterSubmit()"
+
+                  >Register</button>
+                   <button mat-button routerLink="/login" class="divider">Login</button>
+                   <button mat-button  (click)="reset()">Reset</button>
+
+    </form>
+    </div>
+    <div>
+    <mat-sidenav-container>
+    <mat-sidenav mode="over" [(opened)]="opened" class="">User Registerd Sucessfully</mat-sidenav>
+     <mat-sidenav-content><button disabled mat-mini-fab disabled aria-label></button>
+     </mat-sidenav-content>
+
+</mat-sidenav-container>
+    </div>
+
+
